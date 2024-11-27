@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Materials</h1>
+<a href="{% url 'material_create' %}">Create New Material</a>
+<table>
+    <thead>
+        <tr>
+            <th>Material Name</th>
+            <th>Quantity</th>
+            <th>Price per Unit</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for material in materials %}
+        <tr>
+            <td>{{ material.material_name }}</td>
+            <td>{{ material.quantity_in_stock }}</td>
+            <td>{{ material.price_per_unit }}</td>
+            <td>
+                <a href="{% url 'material_edit' material.id %}">Edit</a> |
+                <a href="{% url 'material_delete' material.id %}" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

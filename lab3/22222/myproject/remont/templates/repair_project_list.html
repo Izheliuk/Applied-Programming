@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Repair Projects</h1>
+<a href="{% url 'repair_project_create' %}">Create New Project</a>
+<table>
+    <thead>
+        <tr>
+            <th>Project Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for project in repair_projects %}
+        <tr>
+            <td>{{ project.project_name }}</td>
+            <td>{{ project.start_date }}</td>
+            <td>{{ project.end_date }}</td>
+            <td>{{ project.status }}</td>
+            <td>
+                <a href="{% url 'repair_project_edit' project.id %}">Edit</a> |
+                <a href="{% url 'repair_project_delete' project.id %}" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
