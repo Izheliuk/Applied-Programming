@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Repair Project List</title>
+</head>
+<body>
+    <h1>Repair Projects</h1>
+    <table>
+        <tr>
+            <th>Project Name</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+        {% for project in projects %}
+        <tr>
+            <td>{{ project.project_name }}</td>
+            <td>{{ project.work_description }}</td>
+            <td>{{ project.start_date }}</td>
+            <td>{{ project.end_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'add_repair_project' %}">Add Repair Project</a>
+</body>
+</html>
