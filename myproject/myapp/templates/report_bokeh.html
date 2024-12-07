@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bokeh Report</title>
+    {{ bokeh_css|safe }}
+</head>
+<body>
+    <h1>Bokeh Graphs</h1>
+
+    <div>
+        <h2>Bar Chart</h2>
+        {{ bar_chart_div|safe }}
+        {{ bar_chart_script|safe }}
+    </div>
+
+    <div>
+        <h2>Scatter Chart</h2>
+        {{ scatter_chart_div|safe }}
+        {{ scatter_chart_script|safe }}
+    </div>
+
+    <div>
+        <h2>Line Chart</h2>
+        {{ line_chart_div|safe }}
+        {{ line_chart_script|safe }}
+    </div>
+
+    <div>
+        <h2>Pie Chart</h2>
+        {{ pie_chart_div|safe }}
+        {{ pie_chart_script|safe }}
+    </div>
+
+    {{ bokeh_js|safe }}
+</body>
+</html>

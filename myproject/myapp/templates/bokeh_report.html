@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bokeh Report</title>
+    {{ script1|safe }}
+    {{ script2|safe }}
+    {{ script3|safe }}
+    {{ script4|safe }}
+</head>
+<body>
+    {% if no_data %}
+        <p>Даних немає для відображення.</p>
+    {% else %}
+        <h2>Кількість задач за статусом</h2>
+        <div>{{ div1|safe }}</div>
+        <h2>Задачі за датами завершення</h2>
+        <div>{{ div2|safe }}</div>
+        <h2>Динаміка задач по дням</h2>
+        <div>{{ div3|safe }}</div>
+        <h2>Розподіл задач за статусом</h2>
+        <div>{{ div4|safe }}</div>
+    {% endif %}
+</body>
+</html>

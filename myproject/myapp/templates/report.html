@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>report</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Звіт</h1>
+
+    <div>
+        <h2>Стовпчаста діаграма</h2>
+        <div>{{ charts.bar_chart|safe }}</div>
+    </div>
+
+    <div>
+        <h2>Точкова діаграма</h2>
+        <div>{{ charts.scatter_chart|safe }}</div>
+    </div>
+
+    <div>
+        <h2>Лінійна діаграма</h2>
+        <div>{{ charts.line_chart|safe }}</div>
+    </div>
+
+    <div>
+        <h2>Кругова діаграма</h2>
+        <div>{{ charts.pie_chart|safe }}</div>
+    </div>
+</body>
+</html>
